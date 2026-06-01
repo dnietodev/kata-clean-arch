@@ -2,6 +2,7 @@
   "name": "kata-clean-arch",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "vitest run",
@@ -15,6 +16,7 @@
     "@types/node": "^25.9.1",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
+    "uuid": "^14.0.0",
     "vitest": "^2.1.9"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { Email } from './email';
+import { Email } from './email.js';
 
 describe('Email', () => {
     it('creates a valid email', () => {

@@ -4,10 +4,14 @@ export class Email {
 
 
     constructor(email: string) {
-        if (!Email.emailRegex.test(email)) {
+        if (!this.isValid(email)) {
             throw new Error('Invalid email address');
         }
         this.email = email;
+    }
+
+    private isValid(email: string): boolean {
+        return Email.emailRegex.test(email);
     }
 
     public getValue(): string {
