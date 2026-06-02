@@ -1,5 +1,5 @@
 export class Email {
-    private readonly email: string;
+    public readonly email: string;
     private static emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 

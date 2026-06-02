@@ -2,10 +2,10 @@ import { Email } from "./value-objects/email.js";
 import { Password } from "./value-objects/password.js";
 
 export class User {
-    private id: string;
-    private name: string;
-    private email: Email;
-    private password: Password;
+    public readonly id: string;
+    public readonly name: string;
+    public readonly email: Email;
+    public readonly password: Password;
 
     constructor(name: string, email: string, password: string) {
         this.id = Date.now().toString() + Math.random().toString(36).substring(2);
@@ -17,5 +17,5 @@ export class User {
     public equals(other: User): boolean {
         return this.id === other.id;
     }
-    
+
 }

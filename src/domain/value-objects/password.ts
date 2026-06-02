@@ -1,5 +1,5 @@
 export class Password {
-    private readonly value: string;
+    public readonly value: string;
     private valueRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
     constructor(value: string) {
