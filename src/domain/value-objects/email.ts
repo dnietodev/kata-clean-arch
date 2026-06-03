@@ -14,11 +14,7 @@ export class Email {
         return Email.emailRegex.test(email);
     }
 
-    public getValue(): string {
-        return this.email;
-    }
-
     public equals(other: Email): boolean {
-        return this.email === other.getValue();
+        return this.email === other.email;
     }
 }
