@@ -1,10 +1,8 @@
-import { CompositionRoot } from "../compositon-root.js";
 import { User } from "../domain/user.js";
 import { Email } from "../domain/value-objects/email.js";
 import { Password } from "../domain/value-objects/password.js";
 import type { AddUser } from "../use-cases/add-user.js";
 import type { GetUsers } from "../use-cases/get-users.js";
-import type { UseCase } from "../use-cases/use-case.js";
 
 export interface UserData {
     name: string;
@@ -34,7 +32,11 @@ export class UsersPresenter {
 
     private async createUser(): Promise<void> {
         const userData = await this.view.askForUserData();
-        await this.addUserUseCase.execute(new User(userData.name, userData.email, userData.password));
+        await this.addUserUseCase.execute(new User({
+            name: userData.name,
+            email: new Email(userData.email),
+            password: new Password(userData.password),
+        }));
     }
 
     private async getAllUsers(): Promise<void> {
@@ -43,8 +45,6 @@ export class UsersPresenter {
     }
 
 }
-
-
 
 export interface View {
     showAllUsers(users: User[]): Promise<void>;

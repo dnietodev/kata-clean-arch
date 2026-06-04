@@ -6,9 +6,8 @@ export class InMemoryUserRepository implements UserRepository {
 
     private users: User[] = [];
 
-    async add(user: User): Promise<User> {
+    async add(user: User): Promise<void> {
         this.users.push(user);
-        return user;
     }
 
     async findAll(): Promise<User[]> {

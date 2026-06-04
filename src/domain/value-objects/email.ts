@@ -1,5 +1,5 @@
 export class Email {
-    public readonly email: string;
+    public readonly value: string;
     private static emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
@@ -7,7 +7,7 @@ export class Email {
         if (!this.isValid(email)) {
             throw new Error('Invalid email address');
         }
-        this.email = email;
+        this.value = email;
     }
 
     private isValid(email: string): boolean {
@@ -15,6 +15,6 @@ export class Email {
     }
 
     public equals(other: Email): boolean {
-        return this.email === other.email;
+        return this.value === other.value;
     }
 }

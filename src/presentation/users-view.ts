@@ -18,7 +18,7 @@ export class UsersView implements View {
             return;
         }
         users.forEach((user, index) => {
-            console.log(`${index + 1}. ${user.name} (${user.email.email})`);
+            console.log(`${index + 1}. ${user.name} (${user.email.value})`);
         });
     }
 
